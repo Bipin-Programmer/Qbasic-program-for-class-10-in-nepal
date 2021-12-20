@@ -1,10 +1,10 @@
 REM Write a progam to wheather the word is palidrome or not
-DECLARE SUB PALI()
+DECLARE FUNCTION pali$(w$)
 CLS
-CALL PALI
-END
-SUB PALI
 INPUT "Enter any word"; w$
+PRINT pali$(w$)
+END
+FUNCTION pali$ (w$)
 w$ = UCASE$(w$)
 l = LEN(w$)
 FOR i = l TO 1 STEP -1
@@ -12,9 +12,8 @@ FOR i = l TO 1 STEP -1
     t$ = t$ + c$
 NEXT i
 IF w$ = t$ THEN
-    PRINT "It is palidrome"
+    pali$ = "It is palidrome"
 ELSE
-    PRINT "It is not palidrome"
+    pali$ = "It is not palidrome"
 END IF
-END SUB
-Using Functi
+END FUNCTION
